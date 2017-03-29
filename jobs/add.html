@@ -1,0 +1,53 @@
+<style>
+.error {
+	color: red;
+}
+</style>
+
+<div class = "container">
+<form class = "form-horizontal" role ="form" name="userForm" ng-model="userForm">
+<div class= "form-group">
+<label class = "control-label col-md-1" for = "jobtype">JobType:</label>
+<div class = col-md-9>
+<input type= "text" class = "form-control" id = "jobtype" placeholder ="Enter Jobtype"  ng-model="type">
+</div>
+</div>
+
+<div class= "form-group">
+<label class = "control-label col-md-1" for = "desc">Desc:</label>
+<div class = col-md-9>
+<input type= "text" class = "form-control" id = "desc" placeholder ="Enter description"  ng-model="desc">
+</div>
+</div>
+
+<!-- <form name="userForm" ng-model="userForm">-->
+
+<div class= "form-group">
+<label class = "control-label col-md-1" for = "title">Title:</label>
+<div class = col-md-9>
+<input type= "text" class = "form-control" id = "title" placeholder ="Enter title"  ng-model="title"  name = "jTitle" ng-maxlength=10 ng-minlength=2 required>
+<div ng-show="userForm.jTitle.$invalid && userForm.jTitle.$dirty " class="error">
+
+                <span ng-show="userForm.jTitle.$error.required" class="error" >Enter valid title</span>
+				
+				<span ng-show="userForm.jTitle.$error.pattern" class="error">No special characters</span>
+				
+				<span ng-show="userForm.jTitle.$error.minlength" class="error">You enter atleast 2 characters</span>
+		
+				<span ng-show="userForm.jTitle.$error.maxlength" class="error">You should not more than 10 characters</span>
+</div>
+</div>
+</div>
+		
+<div class= "form-group">
+<label class = "control-label col-md-1" for = "experience">Experience:</label>
+<div class = col-md-9>
+<input type= "text" class = "form-control" id = "experience" placeholder ="Enter experience"  ng-model="experience">
+</div>
+</div>
+<div class = "form-group">
+<div clas = "col-md-offset-2 col-md-10">
+<input type="submit"  ng-disabled="userForm.$invalid" value = "Add Job" ng-click = "addJob()" class="btn btn-primary"></input>
+</div>
+</div>
+</form>

@@ -1,0 +1,22 @@
+
+Search:<input type="search" ng-model="searchTerm"> <br>
+<div colspan="4" align = "left"><a href="#/add">Add</a></div><br>
+<!-- <table width="100%" border="1" cellspacing="0" cellpadding="0"> -->
+  <table ng-table="tableParams" class="table table-hover table-bordered table-striped"> 
+	<tbody>
+	    <tr>
+			<th>Type</th>
+			<th>desc</th>
+			<th>Title</th>
+			<th>Experience</th>
+	 	</tr>
+		<tr ng-repeat="job in $data|filter:{title:searchTerm}">
+			<td>{{job.type}}</td>
+			<td>{{job.desc}}</td>
+			<td>{{job.title}}</td>
+			<td>{{job.experience}}</td>
+			<td><a href="#/edit/{{job.title}}"> Edit </a></td>
+			 <td><a href="javascript:void(0)" ng-click = "deleteJob(job.title)">Delete</a></td>
+			</tr>
+	</tbody>
+</table>

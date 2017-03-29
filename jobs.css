@@ -1,0 +1,38 @@
+.header {
+	background-color: #58ACFA;
+	color: white;
+	text-align: center;
+	padding: 2px;
+}
+
+.maincontent{
+	height:400px;
+}
+
+.leftmenu {
+	background-color: #eeeeee;
+	float: left;
+	padding: 5px;
+	min-height:100%;
+}
+.body{
+	padding: 15px;
+	min-height:100%;
+}
+
+
+.footer {
+	background-color: #0080FF;
+	color: white;
+	clear: both;
+	text-align: center;
+	padding: 5px;
+}
+
+
+ul {
+	list-style-type: none;
+	padding: 0px;
+	margin: 0px;
+}
+
